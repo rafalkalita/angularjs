@@ -13,8 +13,12 @@ function MainCtrl($scope) {
 	}
 	
 	$scope.addTodo = function() {
-		$scope.todos.push({text:$scope.formTodoText, done:false});
-		$scope.formTodoText = '';
+		
+		if($scope.formTodoText.length > 0) {
+			$scope.todos.push({text:$scope.formTodoText, done:false});
+			$scope.formTodoText = '';
+		}
+		
 	}
 	
 	$scope.clearCompleated = function() {
